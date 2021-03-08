@@ -14,7 +14,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 
 import com.maersk.containerBooking.Model.AvailablB;
@@ -24,18 +23,13 @@ import com.maersk.containerBooking.Model.RequestBooking;
 import com.maersk.containerBooking.Model.ResponseBooking;
 import com.maersk.containerBooking.Service.BookingService;
 import com.maersk.containerBooking.controller.BookingController;
-import com.maersk.containerBooking.repository.BookingRepository;
 
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @ExtendWith(SpringExtension.class)
 @WebFluxTest(controllers = BookingController.class)
 @Import(BookingService.class)
 public class BookingControllerTest {
-
-	@MockBean
-	BookingRepository repository;
 
 	@MockBean
 	BookingService bs;
