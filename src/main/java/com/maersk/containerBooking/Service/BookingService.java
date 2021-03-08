@@ -60,10 +60,10 @@ public class BookingService {
 
 	}
 
-	public BookingR saveBooking(RequestBooking b) {
+	public Mono<BookingR> saveBooking(RequestBooking b) {
 		RequestBooking r = br.save(b);
 		BookingR br = new BookingR();
 		br.setBookingRef(String.valueOf(r.getBookingRef()));
-		return br;
+		return Mono.just(br);
 	}
 }

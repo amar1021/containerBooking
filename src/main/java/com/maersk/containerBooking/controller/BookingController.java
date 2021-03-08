@@ -35,6 +35,6 @@ public class BookingController {
 
 	@PostMapping("/savebookings")
 	public Mono<BookingR> saveBooking(@RequestBody RequestBooking booking) {
-		return Mono.just(bs.saveBooking(booking));
+		return bs.saveBooking(booking);
 	}
 }
